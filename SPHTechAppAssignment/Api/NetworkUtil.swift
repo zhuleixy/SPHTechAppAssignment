@@ -38,19 +38,29 @@ class NetworkUtil: NSObject {
         
         let finalUrl = URL(string: address.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         let session = URLSession.shared
-        let dataTask = session.dataTask(with: finalUrl) { (data, respond, error) in
+        
+        var request = URLRequest(url: finalUrl, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 12)
+        request.httpMethod = "GET"
+        
+        let dataTask = session.dataTask(with: request) { (data, respond, error) in
             if let theError = error {
                 failure(NetworkError(theError.localizedDescription))
             } else {
                 if let theData = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: theData, options: [])
-                        success(json)
+                        DispatchQueue.main.async {
+                            success(json)
+                        }
                     } catch {
-                        failure(NetworkError("JSON serialization error"))
+                        DispatchQueue.main.async {
+                            failure(NetworkError("JSON serialization error"))
+                        }
                     }
                 } else {
-                    failure(NetworkError("empty data"))
+                    DispatchQueue.main.async {
+                        failure(NetworkError("empty data"))
+                    }
                 }
             }
         }
