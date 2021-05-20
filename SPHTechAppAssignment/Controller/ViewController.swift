@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MobileDataUsageCellDelegate {
     
     let apiServices: ApiServices = ApiServices();
     let tableview: UITableView = UITableView();
@@ -56,10 +56,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let useage = self.dataSource?[indexPath.row] {
             cell.timeLabel?.text = useage.year
             cell.dataLabel?.text = useage.volumeOfMobileData
+            cell.delegate = self
+            cell.year = useage.year
             if useage.isDecrease {
-                cell.contentView.backgroundColor = UIColor.gray
+                cell.descendImageView?.isHidden = false
             } else {
-                cell.contentView.backgroundColor = UIColor.white
+                cell.descendImageView?.isHidden = true
             }
         }
         return cell
@@ -68,6 +70,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50;
     }
-    
+ 
+    func mobileDataUsageCellDidClickedImageView(cell: MobileDataUsageCell, year: String) -> Void {
+        let alertView = UIAlertController.init(title: year, message: "descend", preferredStyle: .alert)
+        let cancleAlert = UIAlertAction.init(title: "ok", style: .cancel) { (UIAlertAction) in
+            print("clicked")
+        }
+        alertView.addAction(cancleAlert)
+        self.present(alertView, animated: true, completion: nil)
+    }
 }
 
