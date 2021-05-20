@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3714B6265600DA00C9528A /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B4265600DA00C9528A /* NetworkUtil.swift */; };
+		7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B4265600DA00C9528A /* NetworkUtil.swift */; };
+		7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B4265600DA00C9528A /* NetworkUtil.swift */; };
+		7C3714B9265600DA00C9528A /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B5265600DA00C9528A /* ApiServices.swift */; };
+		7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B5265600DA00C9528A /* ApiServices.swift */; };
+		7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B5265600DA00C9528A /* ApiServices.swift */; };
+		7C3714C72656016C00C9528A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* CustomCell.swift */; };
+		7C3714C82656016C00C9528A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* CustomCell.swift */; };
+		7C3714C92656016C00C9528A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* CustomCell.swift */; };
+		7C3714CF2656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */; };
+		7C3714D02656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */; };
+		7C3714D12656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */; };
+		7C3714D22656017700C9528A /* YearMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CE2656017700C9528A /* YearMobileDataUsage.swift */; };
+		7C3714D32656017700C9528A /* YearMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CE2656017700C9528A /* YearMobileDataUsage.swift */; };
+		7C3714D42656017700C9528A /* YearMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CE2656017700C9528A /* YearMobileDataUsage.swift */; };
 		7C9D7A32265543E0005CC3F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D7A31265543E0005CC3F3 /* AppDelegate.swift */; };
 		7C9D7A34265543E0005CC3F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D7A33265543E0005CC3F3 /* SceneDelegate.swift */; };
 		7C9D7A36265543E1005CC3F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9D7A35265543E1005CC3F3 /* ViewController.swift */; };
@@ -35,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C3714B4265600DA00C9528A /* NetworkUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		7C3714B5265600DA00C9528A /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		7C3714C62656016C00C9528A /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarterlyMobileDataUsage.swift; sourceTree = "<group>"; };
+		7C3714CE2656017700C9528A /* YearMobileDataUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMobileDataUsage.swift; sourceTree = "<group>"; };
 		7C9D7A2E265543E0005CC3F3 /* SPHTechAppAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPHTechAppAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9D7A31265543E0005CC3F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C9D7A33265543E0005CC3F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +96,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C3714B3265600A600C9528A /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				7C3714B5265600DA00C9528A /* ApiServices.swift */,
+				7C3714B4265600DA00C9528A /* NetworkUtil.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		7C3714BF265600E000C9528A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C9D7A35265543E1005CC3F3 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7C3714C0265600F300C9528A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C9D7A37265543E1005CC3F3 /* Main.storyboard */,
+				7C9D7A3A265543E3005CC3F3 /* Assets.xcassets */,
+				7C9D7A3C265543E3005CC3F3 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C3714C42656015200C9528A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C3714C62656016C00C9528A /* CustomCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C3714C52656015B00C9528A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */,
+				7C3714CE2656017700C9528A /* YearMobileDataUsage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7C9D7A25265543E0005CC3F3 = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +163,13 @@
 		7C9D7A30265543E0005CC3F3 /* SPHTechAppAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				7C3714C52656015B00C9528A /* Model */,
+				7C3714C42656015200C9528A /* View */,
+				7C3714BF265600E000C9528A /* Controller */,
+				7C3714B3265600A600C9528A /* Api */,
+				7C3714C0265600F300C9528A /* Resources */,
 				7C9D7A31265543E0005CC3F3 /* AppDelegate.swift */,
 				7C9D7A33265543E0005CC3F3 /* SceneDelegate.swift */,
-				7C9D7A35265543E1005CC3F3 /* ViewController.swift */,
-				7C9D7A37265543E1005CC3F3 /* Main.storyboard */,
-				7C9D7A3A265543E3005CC3F3 /* Assets.xcassets */,
-				7C9D7A3C265543E3005CC3F3 /* LaunchScreen.storyboard */,
 				7C9D7A3F265543E3005CC3F3 /* Info.plist */,
 			);
 			path = SPHTechAppAssignment;
@@ -258,9 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3714B6265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C9D7A36265543E1005CC3F3 /* ViewController.swift in Sources */,
 				7C9D7A32265543E0005CC3F3 /* AppDelegate.swift in Sources */,
+				7C3714CF2656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
+				7C3714D22656017700C9528A /* YearMobileDataUsage.swift in Sources */,
 				7C9D7A34265543E0005CC3F3 /* SceneDelegate.swift in Sources */,
+				7C3714C72656016C00C9528A /* CustomCell.swift in Sources */,
+				7C3714B9265600DA00C9528A /* ApiServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +338,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */,
+				7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */,
+				7C3714D32656017700C9528A /* YearMobileDataUsage.swift in Sources */,
+				7C3714C82656016C00C9528A /* CustomCell.swift in Sources */,
 				7C9D7A49265543E3005CC3F3 /* SPHTechAppAssignmentTests.swift in Sources */,
+				7C3714D02656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +351,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */,
+				7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */,
+				7C3714D42656017700C9528A /* YearMobileDataUsage.swift in Sources */,
+				7C3714C92656016C00C9528A /* CustomCell.swift in Sources */,
 				7C9D7A54265543E3005CC3F3 /* SPHTechAppAssignmentUITests.swift in Sources */,
+				7C3714D12656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
