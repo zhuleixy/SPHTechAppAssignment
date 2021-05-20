@@ -7,52 +7,51 @@
 
 import UIKit
 
+struct NetworkError: Error {
+    var message: String?
+
+    init(_ message: String) {
+        self.message = message
+    }
+}
+
 class NetworkUtil: NSObject {
     
-    
     func get(url: String,
-             params: [String:String]!,
-             success: @escaping (AnyObject) -> Void,
-             failure: @escaping (Error) -> Void) -> Void {
+             params: [String:Any]!,
+             success: @escaping (Any) -> Void,
+             failure: @escaping (NetworkError) -> Void) -> Void {
         
-        
-        var items = [URLQueryItem]()
-        
-        for (key,value) in params {
-            items.append(URLQueryItem(name: key, value: value))
-        }
-        
-        let urlComp = NSURLComponents(string: url)!
-        if !items.isEmpty {
-            urlComp.queryItems = items
-        }
-        
-        var urlRequest = URLRequest(url: urlComp.url!)
-        urlRequest.httpMethod = "GET"
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-            
-            if (error != nil) {
-                failure(error!);
-            } else {
-                if (data != nil) {
-                    
-                    do {
-                        let jsonObj =  try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as AnyObject
-                        success(jsonObj as AnyObject);
-                    } catch {
-                        print(error)
-                    }
-                    
+        var i = 0
+        var address = url
+        if let paras = params {
+            for (key, value) in paras {
+                if i == 0 {
+                    address += "?\(key)=\(value)"
                 } else {
-                    //
-                    
-                    
+                    address += "&\(key)=\(value)"
+                }
+                i += 1
+            }
+        }
+        let finalUrl = URL(string: address.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: finalUrl) { (data, respond, error) in
+            if let theError = error {
+                failure(NetworkError(theError.localizedDescription))
+            } else {
+                if let theData = data {
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: theData, options: [])
+                        success(json)
+                    } catch {
+                        failure(NetworkError("JSON serialization error"))
+                    }
+                } else {
+                    failure(NetworkError("empty data"))
                 }
             }
-        })
-        task.resume()
+        }
+        dataTask.resume()
     }
-    
 }
