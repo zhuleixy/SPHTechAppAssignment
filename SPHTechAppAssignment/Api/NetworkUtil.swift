@@ -7,21 +7,22 @@
 
 import UIKit
 
+//custom network request error
 struct NetworkError: Error {
     var message: String?
-
     init(_ message: String) {
         self.message = message
     }
 }
 
+//A simple network tool that encapsulates GET requests
 class NetworkUtil: NSObject {
     
     func get(url: String,
              params: [String:Any]!,
              success: @escaping (Any) -> Void,
              failure: @escaping (NetworkError) -> Void) -> Void {
-        
+        //Stitching parameters
         var i = 0
         var address = url
         if let paras = params {
@@ -34,6 +35,7 @@ class NetworkUtil: NSObject {
                 i += 1
             }
         }
+        
         let finalUrl = URL(string: address.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         let session = URLSession.shared
         let dataTask = session.dataTask(with: finalUrl) { (data, respond, error) in

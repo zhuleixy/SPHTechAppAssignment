@@ -9,8 +9,8 @@ import UIKit
 
 class MobileDataUsageCell : UITableViewCell {
     
-    var timeLabel : UILabel?
-    var dataLabel : UILabel?
+    var timeLabel: UILabel?
+    var dataLabel: UILabel?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
