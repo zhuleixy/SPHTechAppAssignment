@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableview.frame = self.view.bounds
         self.tableview.delegate = self;
         self.tableview.dataSource = self;
-        self.tableview.register(CustomCell.self, forCellReuseIdentifier: "CustomCell")
+        self.tableview.register(MobileDataUsageCell.self, forCellReuseIdentifier: "MobileDataUsageCell")
         self.view.addSubview(self.tableview);
         
         apiServices.fetchMobileDataUsage { (resultArray: [QuarterlyMobileDataUsage]) in
@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : CustomCell = tableview.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell : MobileDataUsageCell = tableview.dequeueReusableCell(withIdentifier: "MobileDataUsageCell", for: indexPath) as! MobileDataUsageCell
         let useage : YearMobileDataUsage = self.dataSource[indexPath.row]
         cell.timeLabel?.text = useage.year
         cell.dataLabel?.text = useage.volumeOfMobileData

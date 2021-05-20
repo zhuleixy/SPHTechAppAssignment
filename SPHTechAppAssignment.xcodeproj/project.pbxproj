@@ -13,9 +13,9 @@
 		7C3714B9265600DA00C9528A /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B5265600DA00C9528A /* ApiServices.swift */; };
 		7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B5265600DA00C9528A /* ApiServices.swift */; };
 		7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B5265600DA00C9528A /* ApiServices.swift */; };
-		7C3714C72656016C00C9528A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* CustomCell.swift */; };
-		7C3714C82656016C00C9528A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* CustomCell.swift */; };
-		7C3714C92656016C00C9528A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* CustomCell.swift */; };
+		7C3714C72656016C00C9528A /* MobileDataUsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* MobileDataUsageCell.swift */; };
+		7C3714C82656016C00C9528A /* MobileDataUsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* MobileDataUsageCell.swift */; };
+		7C3714C92656016C00C9528A /* MobileDataUsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714C62656016C00C9528A /* MobileDataUsageCell.swift */; };
 		7C3714CF2656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */; };
 		7C3714D02656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */; };
 		7C3714D12656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */; };
@@ -52,7 +52,7 @@
 /* Begin PBXFileReference section */
 		7C3714B4265600DA00C9528A /* NetworkUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
 		7C3714B5265600DA00C9528A /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
-		7C3714C62656016C00C9528A /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		7C3714C62656016C00C9528A /* MobileDataUsageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDataUsageCell.swift; sourceTree = "<group>"; };
 		7C3714CD2656017600C9528A /* QuarterlyMobileDataUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarterlyMobileDataUsage.swift; sourceTree = "<group>"; };
 		7C3714CE2656017700C9528A /* YearMobileDataUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMobileDataUsage.swift; sourceTree = "<group>"; };
 		7C9D7A2E265543E0005CC3F3 /* SPHTechAppAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPHTechAppAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +126,7 @@
 		7C3714C42656015200C9528A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7C3714C62656016C00C9528A /* CustomCell.swift */,
+				7C3714C62656016C00C9528A /* MobileDataUsageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 				7C3714CF2656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 				7C3714D22656017700C9528A /* YearMobileDataUsage.swift in Sources */,
 				7C9D7A34265543E0005CC3F3 /* SceneDelegate.swift in Sources */,
-				7C3714C72656016C00C9528A /* CustomCell.swift in Sources */,
+				7C3714C72656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
 				7C3714B9265600DA00C9528A /* ApiServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,7 +341,7 @@
 				7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D32656017700C9528A /* YearMobileDataUsage.swift in Sources */,
-				7C3714C82656016C00C9528A /* CustomCell.swift in Sources */,
+				7C3714C82656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
 				7C9D7A49265543E3005CC3F3 /* SPHTechAppAssignmentTests.swift in Sources */,
 				7C3714D02656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);
@@ -354,7 +354,7 @@
 				7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D42656017700C9528A /* YearMobileDataUsage.swift in Sources */,
-				7C3714C92656016C00C9528A /* CustomCell.swift in Sources */,
+				7C3714C92656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
 				7C9D7A54265543E3005CC3F3 /* SPHTechAppAssignmentUITests.swift in Sources */,
 				7C3714D12656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);

@@ -10,8 +10,5 @@ import UIKit
 class QuarterlyMobileDataUsage {
     var id: Int?
     var quarter: String?
-    var volumeOfMobileData: String?
-    
-
-    
+    var volumeOfMobileData: String? 
 }

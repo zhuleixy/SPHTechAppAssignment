@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+class MobileDataUsageCell : UITableViewCell {
     
     var timeLabel : UILabel?
     var dataLabel : UILabel?
