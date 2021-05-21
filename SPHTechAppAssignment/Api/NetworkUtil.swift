@@ -10,8 +10,10 @@ import UIKit
 //custom network request error
 struct NetworkError: Error {
     var message: String?
-    init(_ message: String) {
+    var request: URLRequest?
+    init(_ message: String, _ request: URLRequest) {
         self.message = message
+        self.request = request
     }
 }
 
@@ -20,7 +22,7 @@ class NetworkUtil: NSObject {
     
     func get(url: String,
              params: [String:Any]!,
-             success: @escaping (Any) -> Void,
+             success: @escaping (URLResponse?, Any?) -> Void,
              failure: @escaping (NetworkError) -> Void) -> Void {
         //Stitching parameters
         var i = 0
@@ -39,27 +41,29 @@ class NetworkUtil: NSObject {
         let finalUrl = URL(string: address.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
         let session = URLSession.shared
         
-        var request = URLRequest(url: finalUrl, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 12)
+        var request = URLRequest(url: finalUrl, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12)
         request.httpMethod = "GET"
         
         let dataTask = session.dataTask(with: request) { (data, respond, error) in
             if let theError = error {
-                failure(NetworkError(theError.localizedDescription))
+                DispatchQueue.main.async {
+                    failure(NetworkError(theError.localizedDescription, request))
+                }
             } else {
                 if let theData = data {
                     do {
                         let json = try JSONSerialization.jsonObject(with: theData, options: [])
                         DispatchQueue.main.async {
-                            success(json)
+                            success(respond, json)
                         }
                     } catch {
                         DispatchQueue.main.async {
-                            failure(NetworkError("JSON serialization error"))
+                            failure(NetworkError("JSON serialization error", request))
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        failure(NetworkError("empty data"))
+                        failure(NetworkError("empty data", request))
                     }
                 }
             }

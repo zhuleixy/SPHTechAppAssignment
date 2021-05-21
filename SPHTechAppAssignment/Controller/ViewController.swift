@@ -54,14 +54,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MobileDataUsageCell = tableview.dequeueReusableCell(withIdentifier: "MobileDataUsageCell", for: indexPath) as! MobileDataUsageCell
         if let useage = self.dataSource?[indexPath.row] {
-            cell.timeLabel?.text = useage.year
-            cell.dataLabel?.text = useage.volumeOfMobileData
+            cell.timeLabel.text = useage.year
+            cell.dataLabel.text = useage.volumeOfMobileData
             cell.delegate = self
             cell.year = useage.year
             if useage.isDecrease {
-                cell.descendImageView?.isHidden = false
+                cell.descendImageView.isHidden = false
             } else {
-                cell.descendImageView?.isHidden = true
+                cell.descendImageView.isHidden = true
             }
         }
         return cell

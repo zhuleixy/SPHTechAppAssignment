@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4019EDACA32D6219C2F89168 /* Pods_SPHTechAppAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D380E74E1386002483E24 /* Pods_SPHTechAppAssignmentTests.framework */; };
 		4F5B51B284ABC9E6A64DC420 /* Pods_SPHTechAppAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E34658DFE1E2664463F6B /* Pods_SPHTechAppAssignment.framework */; };
+		7C108CEF26578CFA008A66CC /* ApiCacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */; };
+		7C108CF326578D00008A66CC /* ApiCacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */; };
+		7C108CF726578D01008A66CC /* ApiCacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */; };
 		7C3714B6265600DA00C9528A /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B4265600DA00C9528A /* NetworkUtil.swift */; };
 		7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B4265600DA00C9528A /* NetworkUtil.swift */; };
 		7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3714B4265600DA00C9528A /* NetworkUtil.swift */; };
@@ -58,6 +61,7 @@
 		5AF0919EEEB158D955780918 /* Pods-SPHTechAppAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechAppAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-SPHTechAppAssignmentTests/Pods-SPHTechAppAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		601F31626076A203715A7537 /* Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests/Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		787BC51AC1E3E3B92556E29B /* Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests.release.xcconfig"; path = "Target Support Files/Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests/Pods-SPHTechAppAssignment-SPHTechAppAssignmentUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCacheUtil.swift; sourceTree = "<group>"; };
 		7C3714B4265600DA00C9528A /* NetworkUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
 		7C3714B5265600DA00C9528A /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 		7C3714C62656016C00C9528A /* MobileDataUsageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileDataUsageCell.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			children = (
 				7C3714B5265600DA00C9528A /* ApiServices.swift */,
 				7C3714B4265600DA00C9528A /* NetworkUtil.swift */,
+				7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -230,7 +235,6 @@
 				5AF0919EEEB158D955780918 /* Pods-SPHTechAppAssignmentTests.debug.xcconfig */,
 				319FB21877627509C96F402F /* Pods-SPHTechAppAssignmentTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -474,6 +478,7 @@
 			files = (
 				7C3714B6265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C9D7A36265543E1005CC3F3 /* ViewController.swift in Sources */,
+				7C108CEF26578CFA008A66CC /* ApiCacheUtil.swift in Sources */,
 				7C9D7A32265543E0005CC3F3 /* AppDelegate.swift in Sources */,
 				7C3714CF2656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 				7C3714D22656017700C9528A /* YearMobileDataUsage.swift in Sources */,
@@ -487,6 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C108CF326578D00008A66CC /* ApiCacheUtil.swift in Sources */,
 				7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D32656017700C9528A /* YearMobileDataUsage.swift in Sources */,
@@ -500,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C108CF726578D01008A66CC /* ApiCacheUtil.swift in Sources */,
 				7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D42656017700C9528A /* YearMobileDataUsage.swift in Sources */,
