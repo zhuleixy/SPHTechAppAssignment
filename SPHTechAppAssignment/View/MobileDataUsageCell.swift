@@ -62,6 +62,17 @@ class MobileDataUsageCell : UITableViewCell {
         }
     }
     
+    func parseData(useage: MobileDataUsageProtocol) {
+        self.timeLabel.text = "Year: ".appending(useage.timeUnit ?? "-")
+        self.dataLabel.text = "Volume: ".appending(useage.volume ?? "-")
+        self.year = useage.timeUnit
+        if useage.isDecrease {
+            self.descendImageView.isHidden = false
+        } else {
+            self.descendImageView.isHidden = true
+        }
+    }
+    
     @objc func imageClickedAction(sender: UITapGestureRecognizer) -> Void {
         delegate?.mobileDataUsageCellDidClickedImageView(cell: self, year: self.year ?? "-")
     }

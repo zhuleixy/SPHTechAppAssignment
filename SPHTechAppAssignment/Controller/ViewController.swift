@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func reuestData() {
         apiServices.fetchMobileDataUsage { (resultArray: [QuarterlyMobileDataUsage]) in
-            let yearData: [YearMobileDataUsage] = YearMobileDataUsage.transQuarterlyDataToYearData(sourceData: resultArray)
+            let yearData: [YearMobileDataUsage] = DataTransverter.convertQuarterlyDataToYearData(sourceData: resultArray)
             self.dataSource = yearData
             self.tableview.reloadData()
         } failure: { (error: NetworkError) in
@@ -55,16 +55,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MobileDataUsageCell = tableview.dequeueReusableCell(withIdentifier: "MobileDataUsageCell", for: indexPath) as! MobileDataUsageCell
         if let useage = self.dataSource?[indexPath.row] {
-            cell.timeLabel.text = "Year: ".appending(useage.year ?? "-")
-            cell.dataLabel.text = "Volume: ".appending(useage.volumeOfMobileData ?? "-")
-            cell.delegate = self
-            cell.year = useage.year
-            if useage.isDecrease {
-                cell.descendImageView.isHidden = false
-            } else {
-                cell.descendImageView.isHidden = true
-            }
+            cell .parseData(useage: useage)
         }
+        cell.delegate = self
         return cell
     }
     
