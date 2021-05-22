@@ -23,12 +23,14 @@ class DataTransverter {
                 let year: String = String(data.quarter!.prefix(4));
                 let yearData: YearMobileDataUsage? = yearDataDic[year]
                 if (yearData != nil) {
-                    let currentVolume: Double = Double(yearData!.volumeOfMobileData!)!
-                    let additionalVolume: Double = Double(data.volumeOfMobileData!)!
-                    let volumeOfYear: Double = currentVolume + additionalVolume;
-                    yearData?.volumeOfMobileData = String(volumeOfYear)
+                    let currentVolumeDecimal: Decimal? = Decimal(string: yearData!.volumeOfMobileData ?? "0")
+                    let additionalVolumeDecimal: Decimal? = Decimal(string: data.volumeOfMobileData ?? "0")
+                    if currentVolumeDecimal != nil && additionalVolumeDecimal != nil {
+                        let volumeOfYear: Decimal = currentVolumeDecimal! + additionalVolumeDecimal!
+                        yearData?.volumeOfMobileData = NSDecimalNumber(decimal: volumeOfYear).stringValue
+                    }
                     yearData?.quarterlyArray.append(data)
-                    
+                    let additionalVolume: Double = Double(data.volumeOfMobileData!)!
                     if additionalVolume < lastVolume {
                         yearData?.isDecrease = true
                     }

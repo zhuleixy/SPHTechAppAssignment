@@ -15,13 +15,8 @@
 		18AF39C026592E4F0083A7A4 /* MobileDataUsageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF39BE26592E4F0083A7A4 /* MobileDataUsageProtocol.swift */; };
 		18AF39C126592E4F0083A7A4 /* MobileDataUsageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF39BE26592E4F0083A7A4 /* MobileDataUsageProtocol.swift */; };
 		18ED91522658F3B00055C510 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED91512658F3B00055C510 /* NetworkUtilTests.swift */; };
-		18ED91532658F3B00055C510 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED91512658F3B00055C510 /* NetworkUtilTests.swift */; };
 		18ED915B2658F42C0055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
-		18ED915C2658F42C0055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
 		18ED9167265902A40055C510 /* incorrectJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ED9166265902A40055C510 /* incorrectJsonData.json */; };
-		18ED9168265902A40055C510 /* incorrectJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ED9166265902A40055C510 /* incorrectJsonData.json */; };
-		18ED9172265904A20055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
-		18ED9176265906E40055C510 /* incorrectJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ED9166265902A40055C510 /* incorrectJsonData.json */; };
 		4019EDACA32D6219C2F89168 /* Pods_SPHTechAppAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D380E74E1386002483E24 /* Pods_SPHTechAppAssignmentTests.framework */; };
 		4F5B51B284ABC9E6A64DC420 /* Pods_SPHTechAppAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E34658DFE1E2664463F6B /* Pods_SPHTechAppAssignment.framework */; };
 		7C108CEF26578CFA008A66CC /* ApiCacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */; };
@@ -376,7 +371,6 @@
 				7C9D7A3E265543E3005CC3F3 /* LaunchScreen.storyboard in Resources */,
 				7C9D7A3B265543E3005CC3F3 /* Assets.xcassets in Resources */,
 				7C9D7A39265543E1005CC3F3 /* Main.storyboard in Resources */,
-				18ED9176265906E40055C510 /* incorrectJsonData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +386,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18ED9168265902A40055C510 /* incorrectJsonData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +507,6 @@
 				7C3714D22656017700C9528A /* YearMobileDataUsage.swift in Sources */,
 				7C9D7A34265543E0005CC3F3 /* SceneDelegate.swift in Sources */,
 				7C3714C72656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
-				18ED9172265904A20055C510 /* MockURLSession.swift in Sources */,
 				18AF39BF26592E4F0083A7A4 /* MobileDataUsageProtocol.swift in Sources */,
 				18AF39B826592E2E0083A7A4 /* DataConverter.swift in Sources */,
 				7C3714B9265600DA00C9528A /* ApiServices.swift in Sources */,
@@ -548,11 +540,9 @@
 				7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D42656017700C9528A /* YearMobileDataUsage.swift in Sources */,
-				18ED91532658F3B00055C510 /* NetworkUtilTests.swift in Sources */,
 				18AF39C126592E4F0083A7A4 /* MobileDataUsageProtocol.swift in Sources */,
 				7C3714C92656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
 				18AF39BA26592E2E0083A7A4 /* DataConverter.swift in Sources */,
-				18ED915C2658F42C0055C510 /* MockURLSession.swift in Sources */,
 				7C9D7A54265543E3005CC3F3 /* SPHTechAppAssignmentUITests.swift in Sources */,
 				7C3714D12656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);
