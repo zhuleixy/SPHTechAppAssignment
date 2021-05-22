@@ -9,6 +9,7 @@ import XCTest
 
 class NetworkUtilTests: XCTestCase {
   
+    //test bad url request
     func testRequest_whenBadURL_returnErrorCode() {
         
         let mockURLSession: MockURLSession = MockURLSession()
@@ -27,6 +28,7 @@ class NetworkUtilTests: XCTestCase {
         wait(for: [expectation], timeout: 10)
     }
     
+    //test server response empty data
     func testRequest_whenResponseEmptyData_returnEmptyDataErrorMessage() {
         
         let mockURLSession: MockURLSession = MockURLSession()
@@ -44,6 +46,7 @@ class NetworkUtilTests: XCTestCase {
         wait(for: [expectation], timeout: 10)
     }
     
+    //test server response wrong json
     func testRequest_whenJSONDecodeError_returnDecodeErrorMessage() {
         
         let mockURLSession: MockURLSession = MockURLSession()

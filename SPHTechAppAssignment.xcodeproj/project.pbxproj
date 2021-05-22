@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F1A202659150F000FFD21 /* CacheFetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F1A1F2659150F000FFD21 /* CacheFetchTests.swift */; };
 		18ED91522658F3B00055C510 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED91512658F3B00055C510 /* NetworkUtilTests.swift */; };
 		18ED91532658F3B00055C510 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED91512658F3B00055C510 /* NetworkUtilTests.swift */; };
 		18ED915B2658F42C0055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181F1A1F2659150F000FFD21 /* CacheFetchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFetchTests.swift; sourceTree = "<group>"; };
 		18ED91512658F3B00055C510 /* NetworkUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtilTests.swift; sourceTree = "<group>"; };
 		18ED915A2658F42C0055C510 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		18ED9166265902A40055C510 /* incorrectJsonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incorrectJsonData.json; sourceTree = "<group>"; };
@@ -211,9 +213,10 @@
 		7C9D7A47265543E3005CC3F3 /* SPHTechAppAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				18ED915A2658F42C0055C510 /* MockURLSession.swift */,
 				7C9D7A48265543E3005CC3F3 /* SPHTechAppAssignmentTests.swift */,
+				18ED915A2658F42C0055C510 /* MockURLSession.swift */,
 				18ED91512658F3B00055C510 /* NetworkUtilTests.swift */,
+				181F1A1F2659150F000FFD21 /* CacheFetchTests.swift */,
 				18ED9166265902A40055C510 /* incorrectJsonData.json */,
 				7C9D7A4A265543E3005CC3F3 /* Info.plist */,
 			);
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C108CF326578D00008A66CC /* ApiCacheUtil.swift in Sources */,
+				181F1A202659150F000FFD21 /* CacheFetchTests.swift in Sources */,
 				7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D32656017700C9528A /* YearMobileDataUsage.swift in Sources */,
