@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18ED91522658F3B00055C510 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED91512658F3B00055C510 /* NetworkUtilTests.swift */; };
+		18ED91532658F3B00055C510 /* NetworkUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED91512658F3B00055C510 /* NetworkUtilTests.swift */; };
+		18ED915B2658F42C0055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
+		18ED915C2658F42C0055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
+		18ED9167265902A40055C510 /* incorrectJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ED9166265902A40055C510 /* incorrectJsonData.json */; };
+		18ED9168265902A40055C510 /* incorrectJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ED9166265902A40055C510 /* incorrectJsonData.json */; };
+		18ED9172265904A20055C510 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED915A2658F42C0055C510 /* MockURLSession.swift */; };
+		18ED9176265906E40055C510 /* incorrectJsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ED9166265902A40055C510 /* incorrectJsonData.json */; };
 		4019EDACA32D6219C2F89168 /* Pods_SPHTechAppAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D380E74E1386002483E24 /* Pods_SPHTechAppAssignmentTests.framework */; };
 		4F5B51B284ABC9E6A64DC420 /* Pods_SPHTechAppAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371E34658DFE1E2664463F6B /* Pods_SPHTechAppAssignment.framework */; };
 		7C108CEF26578CFA008A66CC /* ApiCacheUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C108CEE26578CFA008A66CC /* ApiCacheUtil.swift */; };
@@ -56,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18ED91512658F3B00055C510 /* NetworkUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtilTests.swift; sourceTree = "<group>"; };
+		18ED915A2658F42C0055C510 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		18ED9166265902A40055C510 /* incorrectJsonData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = incorrectJsonData.json; sourceTree = "<group>"; };
 		319FB21877627509C96F402F /* Pods-SPHTechAppAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechAppAssignmentTests.release.xcconfig"; path = "Target Support Files/Pods-SPHTechAppAssignmentTests/Pods-SPHTechAppAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
 		371E34658DFE1E2664463F6B /* Pods_SPHTechAppAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPHTechAppAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AF0919EEEB158D955780918 /* Pods-SPHTechAppAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechAppAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-SPHTechAppAssignmentTests/Pods-SPHTechAppAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,7 +211,10 @@
 		7C9D7A47265543E3005CC3F3 /* SPHTechAppAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				18ED915A2658F42C0055C510 /* MockURLSession.swift */,
 				7C9D7A48265543E3005CC3F3 /* SPHTechAppAssignmentTests.swift */,
+				18ED91512658F3B00055C510 /* NetworkUtilTests.swift */,
+				18ED9166265902A40055C510 /* incorrectJsonData.json */,
 				7C9D7A4A265543E3005CC3F3 /* Info.plist */,
 			);
 			path = SPHTechAppAssignmentTests;
@@ -349,6 +363,7 @@
 				7C9D7A3E265543E3005CC3F3 /* LaunchScreen.storyboard in Resources */,
 				7C9D7A3B265543E3005CC3F3 /* Assets.xcassets in Resources */,
 				7C9D7A39265543E1005CC3F3 /* Main.storyboard in Resources */,
+				18ED9176265906E40055C510 /* incorrectJsonData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ED9167265902A40055C510 /* incorrectJsonData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +379,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18ED9168265902A40055C510 /* incorrectJsonData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +501,7 @@
 				7C3714D22656017700C9528A /* YearMobileDataUsage.swift in Sources */,
 				7C9D7A34265543E0005CC3F3 /* SceneDelegate.swift in Sources */,
 				7C3714C72656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
+				18ED9172265904A20055C510 /* MockURLSession.swift in Sources */,
 				7C3714B9265600DA00C9528A /* ApiServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +514,9 @@
 				7C3714BA265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B7265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D32656017700C9528A /* YearMobileDataUsage.swift in Sources */,
+				18ED91522658F3B00055C510 /* NetworkUtilTests.swift in Sources */,
 				7C3714C82656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
+				18ED915B2658F42C0055C510 /* MockURLSession.swift in Sources */,
 				7C9D7A49265543E3005CC3F3 /* SPHTechAppAssignmentTests.swift in Sources */,
 				7C3714D02656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);
@@ -510,7 +530,9 @@
 				7C3714BB265600DA00C9528A /* ApiServices.swift in Sources */,
 				7C3714B8265600DA00C9528A /* NetworkUtil.swift in Sources */,
 				7C3714D42656017700C9528A /* YearMobileDataUsage.swift in Sources */,
+				18ED91532658F3B00055C510 /* NetworkUtilTests.swift in Sources */,
 				7C3714C92656016C00C9528A /* MobileDataUsageCell.swift in Sources */,
+				18ED915C2658F42C0055C510 /* MockURLSession.swift in Sources */,
 				7C9D7A54265543E3005CC3F3 /* SPHTechAppAssignmentUITests.swift in Sources */,
 				7C3714D12656017700C9528A /* QuarterlyMobileDataUsage.swift in Sources */,
 			);

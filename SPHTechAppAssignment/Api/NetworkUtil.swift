@@ -7,18 +7,43 @@
 
 import UIKit
 
+protocol URLSessionProtocol {
+    typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
+}
+
+protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+extension URLSession: URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionProtocol.DataTaskResult) -> URLSessionDataTaskProtocol {
+        return dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask
+    }
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol {}
+
+
 //custom network request error
 struct NetworkError: Error {
     var message: String?
-    var request: URLRequest?
-    init(_ message: String, _ request: URLRequest) {
+    var statusCode: Int?
+    init(_ message: String, _ statusCode: Int? = 0) {
         self.message = message
-        self.request = request
+        self.statusCode = statusCode
     }
 }
 
 //A simple network tool that encapsulates GET requests
-class NetworkUtil: NSObject {
+class NetworkUtil {
+
+    let session: URLSessionProtocol!
+    
+    init(_ aSession: URLSessionProtocol? = URLSession.shared) {
+        self.session = aSession!
+    }
     
     func get(url: String,
              params: [String:Any]!,
@@ -39,15 +64,14 @@ class NetworkUtil: NSObject {
         }
         
         let finalUrl = URL(string: address.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)!
-        let session = URLSession.shared
         
         var request = URLRequest(url: finalUrl, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 12)
         request.httpMethod = "GET"
         
-        let dataTask = session.dataTask(with: request) { (data, respond, error) in
+        let dataTask = self.session.dataTask(with: request) { (data, respond, error) in
             if let theError = error {
                 DispatchQueue.main.async {
-                    failure(NetworkError(theError.localizedDescription, request))
+                    failure(NetworkError(theError.localizedDescription, error?._code))
                 }
             } else {
                 if let theData = data {
@@ -58,12 +82,12 @@ class NetworkUtil: NSObject {
                         }
                     } catch {
                         DispatchQueue.main.async {
-                            failure(NetworkError("JSON serialization error", request))
+                            failure(NetworkError("JSON serialization error", -1001))
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        failure(NetworkError("empty data", request))
+                        failure(NetworkError("empty data", -1002))
                     }
                 }
             }
