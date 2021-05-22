@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func initUI() {
+        self.title = "MobileDataUsage"
         self.view.backgroundColor = UIColor.white;
         self.tableview.frame = self.view.bounds
         self.tableview.delegate = self
@@ -54,8 +55,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MobileDataUsageCell = tableview.dequeueReusableCell(withIdentifier: "MobileDataUsageCell", for: indexPath) as! MobileDataUsageCell
         if let useage = self.dataSource?[indexPath.row] {
-            cell.timeLabel.text = useage.year
-            cell.dataLabel.text = useage.volumeOfMobileData
+            cell.timeLabel.text = "Year: ".appending(useage.year ?? "-")
+            cell.dataLabel.text = "Volume: ".appending(useage.volumeOfMobileData ?? "-")
             cell.delegate = self
             cell.year = useage.year
             if useage.isDecrease {
@@ -68,7 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50;
+        return 60;
     }
  
     func mobileDataUsageCellDidClickedImageView(cell: MobileDataUsageCell, year: String) -> Void {
