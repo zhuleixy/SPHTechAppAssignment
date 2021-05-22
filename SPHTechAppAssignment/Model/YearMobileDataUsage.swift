@@ -54,6 +54,12 @@ class YearMobileDataUsage: NSObject {
         let sortedKeys = dictKeys.sorted()
         
         for (key) in sortedKeys {
+            guard let year = Int(key as String) else {
+                continue
+            }
+            guard (year >= 2008 && year <= 2018) else {
+                continue
+            }
             let value = yearDataDic[key]
             if (value != nil) {
                 yearArray.append(value!)
