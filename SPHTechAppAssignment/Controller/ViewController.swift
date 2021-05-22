@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let apiServices: ApiServices = ApiServices();
     let tableview: UITableView = UITableView();
-    var dataSource: [YearMobileDataUsage]?
+    var dataSource: [MobileDataUsageProtocol]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func reuestData() {
         apiServices.fetchMobileDataUsage { (resultArray: [QuarterlyMobileDataUsage]) in
-            let yearData: [YearMobileDataUsage] = DataTransverter.convertQuarterlyDataToYearData(sourceData: resultArray)
+            let yearData: [MobileDataUsageProtocol] = DataTransverter.convertQuarterlyDataToYearData(sourceData: resultArray)
             self.dataSource = yearData
             self.tableview.reloadData()
         } failure: { (error: NetworkError) in
