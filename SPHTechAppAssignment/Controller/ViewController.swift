@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func initUI() {
-        self.title = "MobileDataUsage"
+        self.title = "Loading..."
         self.view.backgroundColor = UIColor.white;
         self.tableview.frame = self.view.bounds
         self.tableview.delegate = self
@@ -34,7 +34,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let yearData: [MobileDataUsageProtocol] = DataTransverter.convertQuarterlyDataToYearData(sourceData: resultArray)
             self.dataSource = yearData
             self.tableview.reloadData()
+            self.title = "MobileDataUsage"
         } failure: { (error: NetworkError) in
+            self.title = "MobileDataUsage"
             let alertView = UIAlertController.init(title: "alert", message: error.message, preferredStyle: .alert)
             let cancleAlert = UIAlertAction.init(title: "ok", style: .cancel) { (UIAlertAction) in
                 print("clicked")

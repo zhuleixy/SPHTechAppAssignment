@@ -37,6 +37,8 @@ class ApiServices: NSObject {
             self.cacheUtil .save(object: array);
             success(array)
         } failure: { (error: NetworkError) in
+            print(error.localizedDescription)
+            print("use cache data")
             if let array: [QuarterlyMobileDataUsage] = self.cacheUtil .fetch() {
                 success(array)
             } else {
