@@ -10,7 +10,7 @@ import XCTest
 class NetworkUtilTests: XCTestCase {
   
     //test bad url request
-    func testRequest_whenBadURL_returnErrorCode() {
+    func testRequest_whenBadURL_returnBadURLErrorCode() {
         
         let mockURLSession: MockURLSession = MockURLSession()
         mockURLSession.mockError = NSError(domain: "network", code: NSURLErrorBadURL, userInfo: nil)
@@ -23,6 +23,44 @@ class NetworkUtilTests: XCTestCase {
             XCTFail("Should not happen")
         } failure: { (error: NetworkError) in
             XCTAssertEqual(error.statusCode, NSURLErrorBadURL)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+    }
+    
+    //test request timeout
+    func testRequest_whenTimeOut_returnTimeOutErrorCode() {
+        
+        let mockURLSession: MockURLSession = MockURLSession()
+        mockURLSession.mockError = NSError(domain: "network", code: NSURLErrorTimedOut, userInfo: nil)
+    
+        let networkUtil: NetworkUtil = NetworkUtil(mockURLSession)
+        let expectation = self.expectation(description: "Should return NSURLErrorBadURL error")
+        
+      
+        networkUtil.get(url: "https://www.test.com", params: nil) { (respond: URLResponse?, result: Any?) in
+            XCTFail("Should not happen")
+        } failure: { (error: NetworkError) in
+            XCTAssertEqual(error.statusCode, NSURLErrorTimedOut)
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+    }
+    
+    //test Not Connected To Internet
+    func testRequest_whenNotConnectedToInternet_returnNotConnectedToInternetErrorCode() {
+        
+        let mockURLSession: MockURLSession = MockURLSession()
+        mockURLSession.mockError = NSError(domain: "network", code: NSURLErrorNotConnectedToInternet, userInfo: nil)
+    
+        let networkUtil: NetworkUtil = NetworkUtil(mockURLSession)
+        let expectation = self.expectation(description: "Should return NSURLErrorBadURL error")
+        
+      
+        networkUtil.get(url: "https://www.test.com", params: nil) { (respond: URLResponse?, result: Any?) in
+            XCTFail("Should not happen")
+        } failure: { (error: NetworkError) in
+            XCTAssertEqual(error.statusCode, NSURLErrorNotConnectedToInternet)
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10)
